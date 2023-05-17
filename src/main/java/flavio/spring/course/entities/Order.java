@@ -1,7 +1,6 @@
 package flavio.spring.course.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import flavio.spring.course.entities.enums.OrderStatus;
 import jakarta.persistence.*;
 
@@ -10,7 +9,8 @@ import java.time.Instant;
 
 @Entity
 @Table(name = "tb_order")
-public class Order implements Serializable {
+public class Order implements Serializable{
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
