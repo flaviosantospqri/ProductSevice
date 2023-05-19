@@ -1,5 +1,6 @@
 package flavio.spring.course.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -17,6 +18,7 @@ public class Payment implements Serializable {
 
     @ManyToOne
     @MapsId
+    @JsonIgnore
     private Order order;
 
     public Payment() {
