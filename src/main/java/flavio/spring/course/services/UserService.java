@@ -2,8 +2,11 @@ package flavio.spring.course.services;
 
 import flavio.spring.course.entities.User;
 import flavio.spring.course.repositories.UserRepository;
+import flavio.spring.course.services.exceptions.DataBaseException;
 import flavio.spring.course.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -30,7 +33,7 @@ public class UserService {
     }
 
     public void delete(Long id){
-        userRepository.deleteById(id);
+           userRepository.deleteById(id);
     }
 
     public User update(Long id, User obj){
